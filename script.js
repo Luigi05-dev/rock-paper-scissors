@@ -3,13 +3,9 @@ let computerScore = 0;
 
 function getComputerChoice() {
   const randomNumber = Math.random();
-  if (randomNumber < 0.33) {
-    return "rock";
-  } else if (randomNumber < 0.66) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
+  if (randomNumber < 0.33) return "rock";
+  else if (randomNumber < 0.66) return "paper";
+  else return "scissors";
 }
 
 function getHumanChoice() {
@@ -38,6 +34,27 @@ function playRound(humanChoice, computerChoice) {
   console.log(`Scores => You: ${humanScore}, Computer: ${computerScore}`);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+function playGame() {
+  
+  let humanScore = 0;
+  let computerScore = 0;
+
+  for (let round = 1; round <= 5; round++) {
+    console.log(`Round ${round}:`);
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+    console.log("--------------------------------");
+  }
+
+  console.log("Final Results:");
+  if (humanScore > computerScore) {
+    console.log("🎉 You won the game!");
+  } else if (computerScore > humanScore) {
+    console.log("💻 Computer won the game!");
+  } else {
+    console.log("🤝 It's an overall tie!");
+  }
+}
+
+playGame();
