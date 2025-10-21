@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     const r = Math.random();
     if (r < 1/3) return "rock";
