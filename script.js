@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice() {
   const randomNumber = Math.random();
   if (randomNumber < 0.33) return "rock";
@@ -13,38 +10,37 @@ function getHumanChoice() {
   return input.toLowerCase();
 }
 
-function playRound(humanChoice, computerChoice) {
-  const human = humanChoice.toLowerCase();
-  const comp = computerChoice;
-
-  if (human === comp) {
-    console.log("It's a tie!");
-  } else if (
-    (human === "rock" && comp === "scissors") ||
-    (human === "paper" && comp === "rock") ||
-    (human === "scissors" && comp === "paper")
-  ) {
-    console.log(`You win! ${human} beats ${comp}`);
-    humanScore++;
-  } else {
-    console.log(`You lose! ${comp} beats ${human}`);
-    computerScore++;
-  }
-
-  console.log(`Scores => You: ${humanScore}, Computer: ${computerScore}`);
-}
-
 function playGame() {
-  
   let humanScore = 0;
   let computerScore = 0;
+
+  function playRound(humanChoice, computerChoice) {
+    const human = humanChoice.toLowerCase();
+    const comp = computerChoice;
+
+    if (human === comp) {
+      console.log("It's a tie!");
+    } else if (
+      (human === "rock" && comp === "scissors") ||
+      (human === "paper" && comp === "rock") ||
+      (human === "scissors" && comp === "paper")
+    ) {
+      console.log(`You win! ${human} beats ${comp}`);
+      humanScore++;
+    } else {
+      console.log(`You lose! ${comp} beats ${human}`);
+      computerScore++;
+    }
+
+    console.log(`Scores => You: ${humanScore}, Computer: ${computerScore}`);
+  }
 
   for (let round = 1; round <= 5; round++) {
     console.log(`Round ${round}:`);
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-    console.log("--------------------------------");
+    console.log("-----------------------------------");
   }
 
   console.log("Final Results:");
