@@ -42,11 +42,7 @@ This version runs entirely in the **browser console** — you play by entering y
 
 ---
 
-## Future Improvements
 
-- Add a GUI version with buttons and score tracking on screen.
-- Add sound effects and animations 🎨
-- Keep score across sessions with local storage.
 
 ---
 
