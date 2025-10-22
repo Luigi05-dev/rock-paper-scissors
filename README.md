@@ -39,15 +39,3 @@ This version runs entirely in the **browser console** — you play by entering y
 [**Play Rock Paper Scissors**](https://luigi05-dev.github.io/rock-paper-scissors/)
 
 *(Open the browser console to play!)*
-
----
-
-
-
----
-
-### Author
-
-**Luigi Amore**  
-📍 Solihull, UK  
-📧 [luigiamore.official@gmail.com](mailto:luigiamore.official@gmail.com)
